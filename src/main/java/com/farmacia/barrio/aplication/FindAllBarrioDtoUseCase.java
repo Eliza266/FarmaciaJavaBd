@@ -2,6 +2,7 @@ package com.farmacia.barrio.aplication;
 
 import java.util.List;
 
+import com.farmacia.barrio.domain.emtity.BarrioDto;
 import com.farmacia.barrio.domain.service.BarrioService;
 
 public class FindAllBarrioDtoUseCase {
@@ -13,7 +14,7 @@ public class FindAllBarrioDtoUseCase {
     }
    
 
-    // public List<Ciudad> execute(){
-    //     return ciudadService.findAllCiudad();
-    // }
+    public List<BarrioDto> execute(){
+        return barrioService.findAllBarrioDto();
+    }
 }

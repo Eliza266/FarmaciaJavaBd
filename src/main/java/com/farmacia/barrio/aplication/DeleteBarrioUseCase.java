@@ -9,8 +9,8 @@ public class DeleteBarrioUseCase {
     public DeleteBarrioUseCase(BarrioService barrioService) {
         this.barrioService = barrioService;
     }
-    // public void execute(String idCiudad){
-    //    ciudadService.deleteCiudad(idCiudad);
-    // }
+    public void execute(Integer idBarrio){
+       barrioService.deleteBarrio(idBarrio);
+    }
 
 }

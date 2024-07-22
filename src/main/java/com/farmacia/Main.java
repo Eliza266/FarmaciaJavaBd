@@ -1,5 +1,14 @@
 package com.farmacia;
 
+import com.farmacia.barrio.aplication.CreateBarrioUseCase;
+import com.farmacia.barrio.aplication.DeleteBarrioUseCase;
+import com.farmacia.barrio.aplication.FindAllBarrioDtoUseCase;
+import com.farmacia.barrio.aplication.FindBarrioDtoUseCase;
+import com.farmacia.barrio.aplication.FindBarrioUseCase;
+import com.farmacia.barrio.aplication.UpdateBarrioUseCase;
+import com.farmacia.barrio.domain.service.BarrioService;
+import com.farmacia.barrio.infrastructure.BarrioRepository;
+import com.farmacia.barrio.infrastructure.BarrioUi;
 import com.farmacia.ciudad.aplication.CreateCiudadUseCase;
 import com.farmacia.ciudad.aplication.DeleteCiudadUseCase;
 import com.farmacia.ciudad.aplication.FindAllCiudadUseCase;
@@ -43,23 +52,36 @@ public class Main {
         //ciudadUi.findAllCiudad();
 
         //----------------------TIPO--------------
-        TipoDocumentoService tipoDocumentoService = new TipoRepository();
-        CreateTipoUseCase createTipoUseCase = new CreateTipoUseCase(tipoDocumentoService);
-        FindTipoUseCase findTipoUseCase = new FindTipoUseCase(tipoDocumentoService);
-        DeleteTipoUseCase deleteTipoUseCase = new DeleteTipoUseCase(tipoDocumentoService);
-        UpdateTipoUseCase updateTipoUseCase = new UpdateTipoUseCase(tipoDocumentoService);
-        FindAllTipoUseCase findAllTipoUseCase = new FindAllTipoUseCase(tipoDocumentoService);
+        // TipoDocumentoService tipoDocumentoService = new TipoRepository();
+        // CreateTipoUseCase createTipoUseCase = new CreateTipoUseCase(tipoDocumentoService);
+        // FindTipoUseCase findTipoUseCase = new FindTipoUseCase(tipoDocumentoService);
+        // DeleteTipoUseCase deleteTipoUseCase = new DeleteTipoUseCase(tipoDocumentoService);
+        // UpdateTipoUseCase updateTipoUseCase = new UpdateTipoUseCase(tipoDocumentoService);
+        // FindAllTipoUseCase findAllTipoUseCase = new FindAllTipoUseCase(tipoDocumentoService);
         
-        TipoUi tipoUi = new TipoUi(createTipoUseCase, findTipoUseCase, updateTipoUseCase, deleteTipoUseCase, findAllTipoUseCase);
-        tipoUi.createTipo();
-        tipoUi.findTipo();
-        tipoUi.deleteTipo();
-        tipoUi.updateTipo();
-        tipoUi.findAllTipo();
+        // TipoUi tipoUi = new TipoUi(createTipoUseCase, findTipoUseCase, updateTipoUseCase, deleteTipoUseCase, findAllTipoUseCase);
+        // tipoUi.createTipo();
+        // tipoUi.findTipo();
+        // tipoUi.deleteTipo();
+        // tipoUi.updateTipo();
+        // tipoUi.findAllTipo();
 
         //--------------------Barrio---------------------------
+        BarrioService barrioService = new BarrioRepository();
+        CreateBarrioUseCase createBarrioUseCase = new CreateBarrioUseCase(barrioService);
+        FindBarrioUseCase findBarrioUseCase = new FindBarrioUseCase(barrioService);
+        UpdateBarrioUseCase updateBarrioUseCase = new UpdateBarrioUseCase(barrioService);
+        DeleteBarrioUseCase deleteBarrioUseCase = new DeleteBarrioUseCase(barrioService);
+        FindBarrioDtoUseCase findBarrioDtoUseCase = new FindBarrioDtoUseCase(barrioService);
+        FindAllBarrioDtoUseCase findAllBarrioDtoUseCase = new FindAllBarrioDtoUseCase(barrioService);
+        BarrioUi barrioUi = new BarrioUi(createBarrioUseCase, findBarrioDtoUseCase, findBarrioUseCase, updateBarrioUseCase, deleteBarrioUseCase, findAllBarrioDtoUseCase);
+        //barrioUi.createBarrio();
+        //barrioUi.findBarrio();
+        //barrioUi.updateBarrio();
+        //barrioUi.deleteBarrio();
+        //barrioUi.findBarrioDto();
+        barrioUi.findAllBarrioDto();
         
-
         
 
 

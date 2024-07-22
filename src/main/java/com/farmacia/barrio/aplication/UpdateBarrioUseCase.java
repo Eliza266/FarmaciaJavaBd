@@ -1,5 +1,6 @@
 package com.farmacia.barrio.aplication;
 
+import com.farmacia.barrio.domain.emtity.Barrio;
 import com.farmacia.barrio.domain.service.BarrioService;
 
 public class UpdateBarrioUseCase {
@@ -11,8 +12,8 @@ public class UpdateBarrioUseCase {
     }
     
 
-    // public void execute(Ciudad ciudad){
-    //     ciudadService.updateCiudad(ciudad);
-    // }
+    public void execute(Barrio barrio){
+        barrioService.updateBarrio(barrio);
+    }
 
 }
